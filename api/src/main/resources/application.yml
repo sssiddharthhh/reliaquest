@@ -1,2 +1,28 @@
-spring.application.name: employee-api
-server.port: 8111
+spring:
+  application:
+    name: employee-api
+server:
+  port: 8111
+
+# Employee API Configuration
+employee:
+  api:
+    base-url: http://localhost:8112/api/v1/employee
+
+# Logging Configuration
+logging:
+  level:
+    com.reliaquest.api: DEBUG
+    org.springframework.web.client: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
